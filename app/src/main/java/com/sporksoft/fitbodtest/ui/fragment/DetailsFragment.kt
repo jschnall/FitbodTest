@@ -43,7 +43,19 @@ class DetailsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             data = it.getParcelable(ARG_WORKOUTS)
+            val map = HashMap<Long, Workout>()
             for (workout in data!!.workouts) {
+                val key = workout.date.time
+                if (!map.containsKey(key)) {
+                    map.put(key, workout)
+                } else {
+                    val value = map[key]
+                    if (workout.max > value!!.max) {
+                        map.put(key, workout)
+                    }
+                }
+            }
+            for (workout in map.values.sortedBy { it.date }) {
                 entries.add(Entry(workout.date.time.toFloat(), workout.weight.toFloat()))
             }
         }
