@@ -77,10 +77,10 @@ class FeedFragment : Fragment() {
             entry.max = 0
         } else  if (entry.reps > 36) {
             // Epley formula
-            entry.max = entry.weight * (1 + entry.reps / 30)
+            entry.max = entry.weight * (1 + entry.reps / 30f).toInt()
         } else {
             // Brzycki
-            entry.max = entry.weight * (36 / (37 - entry.reps))
+            entry.max = entry.weight * (36 / (37f - entry.reps)).toInt()
         }
 
         return entry
