@@ -105,12 +105,11 @@ class FeedFragment : Fragment() {
                 val feedItems: MutableList<FeedItem> = mutableListOf()
                 for (entry in map) {
                     val list: MutableList<Workout> = entry.value
-                    var tot: Int = 0
+                    var max: Int = 0
                     for (item in list) {
-                        tot += item.max
+                        max = Math.max(max, item.max)
                     }
-                    val avg = tot / list.size
-                    feedItems.add(FeedItem(entry.key, entry.value, avg))
+                    feedItems.add(FeedItem(entry.key, entry.value, max))
                 }
                 uiThread {
                     adapter.reset(feedItems.sortedBy { it.name })
