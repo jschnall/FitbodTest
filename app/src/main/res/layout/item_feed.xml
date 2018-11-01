@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragment.FeedFragment"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/maxWeight"
+        android:textAppearance="@style/Text.Light.Large"
+        tools:text="Back Squat"/>
+
+    <TextView
+        android:id="@+id/maxWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="@style/Text.Light.Large"
+        tools:text="215"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/subTitle2"
+        android:textAppearance="@style/Text.Light.Muted"
+        android:text="@string/one_rm_record"/>
+
+    <TextView
+        android:id="@+id/subTitle2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="@style/Text.Light.Muted"
+        android:text="@string/pounds"
+        android:layout_marginStart="16dp"/>
+
+</android.support.constraint.ConstraintLayout>

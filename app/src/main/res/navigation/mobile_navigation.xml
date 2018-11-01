@@ -1,0 +1,21 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@id/feedFragment">
+
+    <fragment
+            android:id="@+id/feedFragment"
+            android:name="com.sporksoft.fitbodtest.ui.fragment.FeedFragment"
+            android:label="@string/title_feed"
+            tools:layout="@layout/fragment_feed" >
+    </fragment>
+
+    <fragment
+            android:id="@+id/detailsFragment"
+            android:name="com.sporksoft.fitbodtest.ui.fragment.DetailsFragment"
+            android:label="@string/title_details"
+            tools:layout="@layout/fragment_feed" >
+    </fragment>
+
+</navigation>
